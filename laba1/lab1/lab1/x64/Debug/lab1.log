@@ -1,0 +1,4 @@
+﻿  Assembling Asembler.asm...
+Asembler.asm(8): error A2008: syntax error : Start
+Asembler.asm(8): error A2088: END directive required at end of file
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: выход из команды "ml64.exe /c /nologo /Zi /Fo"lab1\x64\Debug\Asembler.obj" /W3 /errorReport:prompt  /TaAsembler.asm" с кодом "1".

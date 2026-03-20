@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\mosg\\laba2\\lab2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2208596F-248B-49E3-9F1D-2B061BC4314A}|lab2.vcxproj|D:\\mosg\\laba2\\lab2\\lab2.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{2208596F-248B-49E3-9F1D-2B061BC4314A}|lab2.vcxproj|solutionrelative:lab2.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "lab2.asm",
+              "DocumentMoniker": "D:\\mosg\\laba2\\lab2\\lab2.asm",
+              "RelativeDocumentMoniker": "lab2.asm",
+              "ToolTip": "D:\\mosg\\laba2\\lab2\\lab2.asm",
+              "RelativeToolTip": "lab2.asm",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAlwFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-14T05:48:10.369Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

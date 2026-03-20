@@ -1,0 +1,108 @@
+__Lrdata 2F FFFFFFD4 DATA
+__Hrbss 2F 0 DATA
+__Lrbss 20 0 DATA
+?a_delay 2B 0 DATA
+__Birdata 3 FFFFFFD4 DATA
+__Hirdata 2F FFFFFFD4 DATA
+__Lirdata 2F FFFFFFD4 DATA
+powerup 1E0 0 CODE
+__Htext 2F 0
+__Ltext 2F 0
+__Hcode 2F 0
+__Lcode 2F 0
+__Hdata 100 0 CODE
+__Hconst 100 0 CODE
+__Ldata 100 0 CODE
+__Lconst 100 0 CODE
+__Bbss 2F 0 XDATA
+__Hbss 2F 0 XDATA
+__Hstrings 100 0 CODE
+__Lbss 2F 0 XDATA
+__Lstrings 100 0 CODE
+_delay 3 0 CODE
+__S0 1E3 0
+start1 1C2 0 CODE
+__Hnvram 2F 0 XDATA
+small_model 1 0
+__Lnvram 2F 0 XDATA
+awmod 18A 0 CODE
+lwmod 163 0 CODE
+__Hheap 2F 0 XDATA
+__Lheap 2F 0 XDATA
+_main 2D 0 CODE
+?a_main 20 0 DATA
+awdiv 192 0 CODE
+_exit 1D3 0 CODE
+lwdiv 157 0 CODE
+start 0 0 CODE
+intlevel0 0 0
+__Brbit 20 20 BITSEG
+__Hrbit 0 20 BITSEG
+intlevel1 0 0
+__Hvectors 3 0 CODE
+__Lrbit 0 20 BITSEG
+__Lvectors 0 0 CODE
+_seg_digits 1D6 0 CODE
+__Bidata 2F 0 DATA
+__Hidata 2F 0 DATA
+__Lidata 2F 0 DATA
+stack_internal 1 0
+__Brdata 3 FFFFFFD4 DATA
+__Hrdata 2F FFFFFFD4 DATA
+%segments
+vectors 0 1E2 CODE
+rbit 0 E BITSEG
+%locals
+Y:\main_0.obj
+C:\Users\E84D~1\DOCUME~1\NATION~1\CIRCUI~1.0\MCUWOR~1\pc2\project1\main.c
+17 3 0 CODE
+19 5 0 CODE
+18 A 0 CODE
+19 E 0 CODE
+20 2A 0 CODE
+22 2D 0 CODE
+23 30 0 CODE
+24 35 0 CODE
+25 38 0 CODE
+27 3B 0 CODE
+30 3E 0 CODE
+31 41 0 CODE
+34 44 0 CODE
+35 47 0 CODE
+40 4A 0 CODE
+41 4D 0 CODE
+42 50 0 CODE
+44 53 0 CODE
+48 5A 0 CODE
+49 5F 0 CODE
+50 64 0 CODE
+52 67 0 CODE
+53 6A 0 CODE
+54 6C 0 CODE
+57 6F 0 CODE
+58 73 0 CODE
+59 7A 0 CODE
+60 7F 0 CODE
+61 81 0 CODE
+63 8E 0 CODE
+67 91 0 CODE
+68 96 0 CODE
+69 9B 0 CODE
+71 9E 0 CODE
+72 A1 0 CODE
+73 A3 0 CODE
+76 A6 0 CODE
+77 AA 0 CODE
+79 B1 0 CODE
+81 B6 0 CODE
+82 BB 0 CODE
+83 BE 0 CODE
+84 C1 0 CODE
+87 C8 0 CODE
+91 CB 0 CODE
+92 D0 0 CODE
+93 DE 0 CODE
+94 EC 0 CODE
+97 F4 0 CODE
+46 FB 0 CODE
+99 FE 0 CODE

@@ -1,0 +1,99 @@
+__Lrdata 29 FFFFFFDA DATA
+__Hrbss 29 0 DATA
+__Lrbss 21 0 DATA
+__Birdata 3 FFFFFFDA DATA
+__Hirdata 29 FFFFFFDA DATA
+__Lirdata 29 FFFFFFDA DATA
+powerup 11B 0 CODE
+__Htext 29 0
+_delay_ms 3 0 CODE
+__Ltext 29 0
+__Hcode 29 0
+__Lcode 29 0
+__Hdata 100 0 CODE
+__Hconst 100 0 CODE
+__Ldata 100 0 CODE
+__Lconst 100 0 CODE
+__Bbss 29 0 XDATA
+__Hbss 29 0 XDATA
+__Hstrings 100 0 CODE
+__Lbss 29 0 XDATA
+__Lstrings 100 0 CODE
+__S0 11E 0
+start1 105 0 CODE
+__Hnvram 29 0 XDATA
+small_model 1 0
+__Lnvram 29 0 XDATA
+__Hheap 29 0 XDATA
+__Lheap 29 0 XDATA
+_main 58 0 CODE
+_up_pressed 1 20 BITSEG
+_exit 118 0 CODE
+start 0 0 CODE
+intlevel0 0 0
+_duty 22 0 DATA
+_cnt 21 0 DATA
+?a_delay_ms 23 0 DATA
+__Brbit 20 20 BITSEG
+__Hrbit 2 20 BITSEG
+intlevel1 0 0
+__Hvectors 3 0 CODE
+__Lrbit 0 20 BITSEG
+__Lvectors 0 0 CODE
+__Bidata 29 0 DATA
+__Hidata 29 0 DATA
+_down_pressed 0 20 BITSEG
+__Lidata 29 0 DATA
+stack_internal 1 0
+__Brdata 3 FFFFFFDA DATA
+__Hrdata 29 FFFFFFDA DATA
+%segments
+vectors 0 11D CODE
+rbit 0 8 BITSEG
+%locals
+Y:\main_0.obj
+D:\mosg\pr7\prac7\project1\main.c
+8 3 0 CODE
+10 5 0 CODE
+9 A 0 CODE
+10 E 0 CODE
+11 10 0 CODE
+10 3B 0 CODE
+12 55 0 CODE
+14 58 0 CODE
+15 5B 0 CODE
+16 5E 0 CODE
+17 61 0 CODE
+18 63 0 CODE
+20 65 0 CODE
+22 68 0 CODE
+24 6B 0 CODE
+25 6E 0 CODE
+27 71 0 CODE
+30 73 0 CODE
+31 7A 0 CODE
+32 7C 0 CODE
+33 7F 0 CODE
+35 82 0 CODE
+36 8D 0 CODE
+38 91 0 CODE
+40 93 0 CODE
+41 95 0 CODE
+45 A2 0 CODE
+46 A7 0 CODE
+47 AE 0 CODE
+48 B5 0 CODE
+49 BA 0 CODE
+50 C4 0 CODE
+51 CA 0 CODE
+54 CC 0 CODE
+57 D0 0 CODE
+58 D5 0 CODE
+59 DC 0 CODE
+60 E3 0 CODE
+61 E8 0 CODE
+62 F2 0 CODE
+63 F8 0 CODE
+66 FA 0 CODE
+29 FE 0 CODE
+68 101 0 CODE

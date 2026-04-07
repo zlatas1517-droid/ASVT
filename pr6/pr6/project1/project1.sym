@@ -1,0 +1,104 @@
+__Lrdata 23 FFFFFFE0 DATA
+__Hrbss 23 0 DATA
+__Lrbss 20 0 DATA
+__Birdata 3 FFFFFFE0 DATA
+__Hirdata 23 FFFFFFE0 DATA
+__Lirdata 23 FFFFFFE0 DATA
+powerup 1D7 0 CODE
+__Htext 23 0
+__Ltext 23 0
+__Hcode 23 0
+__Lcode 23 0
+ldb_r0 161 0 CODE
+ldc_r0 15D 0 CODE
+__Hdata 100 0 CODE
+__Hconst 100 0 CODE
+__Ldata 100 0 CODE
+__Lconst 100 0 CODE
+__Bbss 23 0 XDATA
+ldb_r1 16E 0 CODE
+ldc_r1 16A 0 CODE
+__Hbss 23 0 XDATA
+__Hstrings 100 0 CODE
+ldb_r2 17B 0 CODE
+ldc_r2 177 0 CODE
+__Lbss 23 0 XDATA
+__Lstrings 100 0 CODE
+ldb_r3 188 0 CODE
+ldc_r3 184 0 CODE
+ldb_r4 195 0 CODE
+ldc_r4 191 0 CODE
+ldb_r5 1A2 0 CODE
+ldc_r5 19E 0 CODE
+__S0 1DA 0
+ldb_r6 1AF 0 CODE
+ldc_r6 1AB 0 CODE
+ldb_r7 1BC 0 CODE
+ldc_r7 1B8 0 CODE
+start1 1C5 0 CODE
+__Hnvram 23 0 XDATA
+small_model 1 0
+__Lnvram 23 0 XDATA
+ldc_byte 152 0 CODE
+__Hheap 23 0 XDATA
+__Lheap 23 0 XDATA
+_main 3 0 CODE
+?a_main 20 0 DATA
+_exit 1D4 0 CODE
+start 0 0 CODE
+intlevel0 0 0
+__Brbit 20 20 BITSEG
+__Hrbit 0 20 BITSEG
+intlevel1 0 0
+__Hvectors 3 0 CODE
+__Lrbit 0 20 BITSEG
+__Lvectors 0 0 CODE
+__Bidata 23 0 DATA
+__Hidata 23 0 DATA
+__Lidata 23 0 DATA
+stack_internal 1 0
+__Brdata 3 FFFFFFE0 DATA
+__Hrdata 23 FFFFFFE0 DATA
+%segments
+vectors 0 1D9 CODE
+rbit 0 2 BITSEG
+%locals
+Y:\main_0.obj
+D:\mosg\pr6\pr6\project1\main.c
+3 3 0 CODE
+8 6 0 CODE
+10 C 0 CODE
+11 18 0 CODE
+12 24 0 CODE
+13 30 0 CODE
+14 3C 0 CODE
+15 48 0 CODE
+16 54 0 CODE
+17 60 0 CODE
+18 6C 0 CODE
+19 78 0 CODE
+20 84 0 CODE
+21 90 0 CODE
+22 9C 0 CODE
+23 A8 0 CODE
+24 B4 0 CODE
+25 C0 0 CODE
+26 CC 0 CODE
+27 D8 0 CODE
+28 E4 0 CODE
+29 F0 0 CODE
+32 FC 0 CODE
+33 FF 0 CODE
+34 102 0 CODE
+35 105 0 CODE
+36 108 0 CODE
+37 10A 0 CODE
+39 10D 0 CODE
+41 113 0 CODE
+42 122 0 CODE
+43 12D 0 CODE
+44 136 0 CODE
+45 138 0 CODE
+41 140 0 CODE
+48 14C 0 CODE
+49 14E 0 CODE

@@ -1,0 +1,241 @@
+MAIN                                                                                                          PAGE 1
+
+                       1    $MOD51
+                       2    
+0000                   3            ORG     00H
+0000 020100            4            LJMP    START
+                       5    
+0100                   6            ORG     100H
+                       7    
+0100                   8    START:
+0100 7580FF            9            MOV     P0, #0FFH
+0103 7590F0           10            MOV     P1, #0F0H       ; P1.7-P1.4 
+0106 75A000           11            MOV     P2, #00H
+0109 7507FF           12            MOV     07H, #0FFH       ; Store last displayed key (0FFH = no key)
+010C 7506FF           13            MOV     06H, #0FFH       ; Store current pressed key
+010F 750500           14            MOV     05H, #00H        ; Flag: 0 = can display, 1 = already displayed once
+                      15            
+                      16    
+                      17    ; LCD INIT - Keep these delays as they're needed for LCD initialization
+0112 758038           18            MOV     P0, #038H
+0115 75A001           19            MOV     P2, #1
+0118 75A000           20            MOV     P2, #0
+011B 1201FD           21            LCALL   DELAY_5ms
+                      22    
+011E 75800C           23            MOV     P0, #00CH
+0121 75A001           24            MOV     P2, #1
+0124 75A000           25            MOV     P2, #0
+0127 1201FD           26            LCALL   DELAY_5ms
+                      27    
+012A 758001           28            MOV     P0, #001H
+012D 75A001           29            MOV     P2, #1
+0130 75A000           30            MOV     P2, #0
+0133 1201FD           31            LCALL   DELAY_5ms
+                      32    
+0136 758080           33            MOV     P0, #080H       ; Set initial cursor position
+0139 75A001           34            MOV     P2, #1
+013C 75A000           35            MOV     P2, #0
+013F 1201F4           36            LCALL   DELAY_1ms
+                      37    
+0142                  38    MAIN:
+0142 120172           39            LCALL   GET_KEY         ; Get current key press (returns 0FFH if no key)
+0145 F506             40            MOV     06H, A          ; Store current key state
+                      41            
+0147 B4FF08           42            CJNE    A, #0FFH, KEY_PRESSED  ; If key pressed
+                      43            ; No key pressed - reset everything
+014A 7507FF           44            MOV     07H, #0FFH      ; Reset last displayed key
+014D 750500           45            MOV     05H, #00H       ; Reset display flag
+0150 80F0             46            SJMP    MAIN
+                      47    
+0152                  48    KEY_PRESSED:
+                      49            ; Check if we've already displayed a key after last release
+0152 E505             50            MOV     A, 05H
+0154 B400EB           51            CJNE    A, #00H, MAIN   ; If already displayed once (05H != 0), ignore all further k
+                                                                               eys
+                      52            
+                      53            ; Check if this key is different from last displayed
+0157 E506             54            MOV     A, 06H          ; Get current key
+0159 B50702           55            CJNE    A, 07H, DISPLAY_NEW  ; If different from last displayed
+015C 80E4             56            SJMP    MAIN            ; Same key, don't display again
+                      57    
+MAIN                                                                                                          PAGE 2
+
+015E                  58    DISPLAY_NEW:
+                      59            ; Display the digit on LCD
+015E E506             60            MOV     A, 06H          ; Get current key
+0160 F580             61            MOV     P0, A           ; Send the digit to LCD
+0162 75A003           62            MOV     P2, #3          ; Set RS=1, RW=0, EN=1
+0165 75A002           63            MOV     P2, #2          ; Set RS=1, RW=0, EN=0 (latch data)
+0168 1201EF           64            LCALL   DELAY_SHORT     ; Short delay only
+                      65            
+016B F507             66            MOV     07H, A          ; Store as last displayed key
+016D 750501           67            MOV     05H, #01H       ; Set flag - already displayed a key
+                      68            
+0170 80D0             69            SJMP    MAIN
+                      70    
+                      71    
+0172                  72    GET_KEY:
+                      73            ; Scan all rows and return the highest priority key (lower row has higher priority)
+                                                                               
+                      74            ; Returns key ASCII code in A, or 0FFH if no key pressed
+                      75            
+                      76            ; Row 0 (P1.0 = 0) - Highest priority
+0172 7590F0           77            MOV     P1, #0F0H
+0175 C290             78            CLR     P1.0
+0177 D291             79            SETB    P1.1
+0179 D292             80            SETB    P1.2
+017B 1201EF           81            LCALL   DELAY_SHORT     ; Short delay for debouncing
+                      82            
+017E E590             83            MOV     A, P1
+0180 5470             84            ANL     A, #070H
+0182 B47002           85            CJNE    A, #070H, R0_CHECK
+0185 8014             86            SJMP    ROW1
+                      87    
+0187                  88    R0_CHECK:
+                      89            ; Check columns in row 0
+0187 20E503           90            JB      ACC.5, R0_C1
+018A 7437             91            MOV     A, #37H         ; '7' - Column 2
+018C 22               92            RET
+018D                  93    R0_C1:
+018D 20E403           94            JB      ACC.4, R0_C0
+0190 7434             95            MOV     A, #34H         ; '4' - Column 1
+0192 22               96            RET
+0193                  97    R0_C0:
+0193 20E303           98            JB      ACC.3, R0_END
+0196 7431             99            MOV     A, #31H         ; '1' - Column 0
+0198 22              100            RET
+0199                 101    R0_END:
+0199 8000            102            SJMP    ROW1
+                     103    
+019B                 104    ROW1:
+                     105            ; Row 1 (P1.1 = 0)
+019B 7590F0          106            MOV     P1, #0F0H
+019E D290            107            SETB    P1.0
+01A0 C291            108            CLR     P1.1
+01A2 D292            109            SETB    P1.2
+01A4 1201EF          110            LCALL   DELAY_SHORT
+                     111            
+01A7 E590            112            MOV     A, P1
+01A9 5470            113            ANL     A, #070H
+01AB B47002          114            CJNE    A, #070H, R1_CHECK
+MAIN                                                                                                          PAGE 3
+
+01AE 8014            115            SJMP    ROW2
+                     116    
+01B0                 117    R1_CHECK:
+01B0 20E503          118            JB      ACC.5, R1_C1
+01B3 7438            119            MOV     A, #38H         ; '8' - Column 2
+01B5 22              120            RET
+01B6                 121    R1_C1:
+01B6 20E403          122            JB      ACC.4, R1_C0
+01B9 7435            123            MOV     A, #35H         ; '5' - Column 1
+01BB 22              124            RET
+01BC                 125    R1_C0:
+01BC 20E303          126            JB      ACC.3, R1_END
+01BF 7432            127            MOV     A, #32H         ; '2' - Column 0
+01C1 22              128            RET
+01C2                 129    R1_END:
+01C2 8000            130            SJMP    ROW2
+                     131    
+01C4                 132    ROW2:
+                     133            ; Row 2 (P1.2 = 0)
+01C4 7590F0          134            MOV     P1, #0F0H
+01C7 D290            135            SETB    P1.0
+01C9 D291            136            SETB    P1.1
+01CB C292            137            CLR     P1.2
+01CD 1201EF          138            LCALL   DELAY_SHORT
+                     139            
+01D0 E590            140            MOV     A, P1
+01D2 5470            141            ANL     A, #070H
+01D4 B47003          142            CJNE    A, #070H, R2_CHECK
+01D7 74FF            143            MOV     A, #0FFH        ; No key pressed
+01D9 22              144            RET
+                     145    
+01DA                 146    R2_CHECK:
+01DA 20E503          147            JB      ACC.5, R2_C1
+01DD 7439            148            MOV     A, #39H         ; '9' - Column 2
+01DF 22              149            RET
+01E0                 150    R2_C1:
+01E0 20E403          151            JB      ACC.4, R2_C0
+01E3 7436            152            MOV     A, #36H         ; '6' - Column 1
+01E5 22              153            RET
+01E6                 154    R2_C0:
+01E6 20E303          155            JB      ACC.3, R2_END
+01E9 7433            156            MOV     A, #33H         ; '3' - Column 0
+01EB 22              157            RET
+01EC                 158    R2_END:
+01EC 74FF            159            MOV     A, #0FFH        ; No key pressed (spurious detection)
+01EE 22              160            RET
+                     161    
+                     162    
+                     163    ; Short delay for key debouncing and fast LCD updates (~100us)
+01EF                 164    DELAY_SHORT:
+01EF 7D32            165            MOV     R5, #50
+01F1 DDFE            166    DS1:    DJNZ    R5, DS1
+01F3 22              167            RET
+                     168    
+                     169    ; 1ms delay for LCD commands
+01F4                 170    DELAY_1ms:
+01F4 7E02            171            MOV     R6, #2
+01F6 7DFA            172    D1:     MOV     R5, #250
+MAIN                                                                                                          PAGE 4
+
+01F8 DDFE            173    D2:     DJNZ    R5, D2
+01FA DEFA            174            DJNZ    R6, D1
+01FC 22              175            RET
+                     176    
+                     177    ; 5ms delay for LCD initialization
+01FD                 178    DELAY_5ms:
+01FD 7E0A            179            MOV     R6, #10
+01FF 7DFA            180    D3:     MOV     R5, #250
+0201 DDFE            181    D4:     DJNZ    R5, D4
+0203 DEFA            182            DJNZ    R6, D3
+0205 22              183            RET
+                     184    
+                     185    ; 50ms delay (kept for compatibility but not used)
+0206                 186    DELAY_50ms:
+0206 7E64            187            MOV     R6, #100
+0208 7DFA            188    D5:     MOV     R5, #250
+020A DDFE            189    D6:     DJNZ    R5, D6
+020C DEFA            190            DJNZ    R6, D5
+020E 22              191            RET
+                     192    
+                     193            END
+
+VERSION 1.2k ASSEMBLY COMPLETE, 0 ERRORS FOUND
+MAIN                                                                                                          PAGE 5
+
+ACC. . . . . . . . . . . . . . .  D ADDR  00E0H  PREDEFINED  
+D1 . . . . . . . . . . . . . . .  C ADDR  01F6H  
+D2 . . . . . . . . . . . . . . .  C ADDR  01F8H  
+D3 . . . . . . . . . . . . . . .  C ADDR  01FFH  
+D4 . . . . . . . . . . . . . . .  C ADDR  0201H  
+D5 . . . . . . . . . . . . . . .  C ADDR  0208H  
+D6 . . . . . . . . . . . . . . .  C ADDR  020AH  
+DELAY_1MS. . . . . . . . . . . .  C ADDR  01F4H  
+DELAY_50MS . . . . . . . . . . .  C ADDR  0206H  NOT USED  
+DELAY_5MS. . . . . . . . . . . .  C ADDR  01FDH  
+DELAY_SHORT. . . . . . . . . . .  C ADDR  01EFH  
+DISPLAY_NEW. . . . . . . . . . .  C ADDR  015EH  
+DS1. . . . . . . . . . . . . . .  C ADDR  01F1H  
+GET_KEY. . . . . . . . . . . . .  C ADDR  0172H  
+KEY_PRESSED. . . . . . . . . . .  C ADDR  0152H  
+MAIN . . . . . . . . . . . . . .  C ADDR  0142H  
+P0 . . . . . . . . . . . . . . .  D ADDR  0080H  PREDEFINED  
+P1 . . . . . . . . . . . . . . .  D ADDR  0090H  PREDEFINED  
+P2 . . . . . . . . . . . . . . .  D ADDR  00A0H  PREDEFINED  
+R0_C0. . . . . . . . . . . . . .  C ADDR  0193H  
+R0_C1. . . . . . . . . . . . . .  C ADDR  018DH  
+R0_CHECK . . . . . . . . . . . .  C ADDR  0187H  
+R0_END . . . . . . . . . . . . .  C ADDR  0199H  
+R1_C0. . . . . . . . . . . . . .  C ADDR  01BCH  
+R1_C1. . . . . . . . . . . . . .  C ADDR  01B6H  
+R1_CHECK . . . . . . . . . . . .  C ADDR  01B0H  
+R1_END . . . . . . . . . . . . .  C ADDR  01C2H  
+R2_C0. . . . . . . . . . . . . .  C ADDR  01E6H  
+R2_C1. . . . . . . . . . . . . .  C ADDR  01E0H  
+R2_CHECK . . . . . . . . . . . .  C ADDR  01DAH  
+R2_END . . . . . . . . . . . . .  C ADDR  01ECH  
+ROW1 . . . . . . . . . . . . . .  C ADDR  019BH  
+ROW2 . . . . . . . . . . . . . .  C ADDR  01C4H  
+START. . . . . . . . . . . . . .  C ADDR  0100H  

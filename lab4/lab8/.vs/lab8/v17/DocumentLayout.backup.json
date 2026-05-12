@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\mosg\\lab4\\lab8\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{111A9FB7-854D-422D-8772-C41B0AF01F5C}|lab8.vcxproj|D:\\mosg\\lab4\\lab8\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{111A9FB7-854D-422D-8772-C41B0AF01F5C}|lab8.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{111A9FB7-854D-422D-8772-C41B0AF01F5C}|lab8.vcxproj|D:\\mosg\\lab4\\lab8\\module.asm||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{111A9FB7-854D-422D-8772-C41B0AF01F5C}|lab8.vcxproj|solutionrelative:module.asm||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{111A9FB7-854D-422D-8772-C41B0AF01F5C}|lab8.vcxproj|D:\\mosg\\lab4\\lab8\\func.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{111A9FB7-854D-422D-8772-C41B0AF01F5C}|lab8.vcxproj|solutionrelative:func.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\mosg\\lab4\\lab8\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "D:\\mosg\\lab4\\lab8\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-05T13:21:45.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "func.cpp",
+              "DocumentMoniker": "D:\\mosg\\lab4\\lab8\\func.cpp",
+              "RelativeDocumentMoniker": "func.cpp",
+              "ToolTip": "D:\\mosg\\lab4\\lab8\\func.cpp",
+              "RelativeToolTip": "func.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-05T13:21:13.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "module.asm",
+              "DocumentMoniker": "D:\\mosg\\lab4\\lab8\\module.asm",
+              "RelativeDocumentMoniker": "module.asm",
+              "ToolTip": "D:\\mosg\\lab4\\lab8\\module.asm",
+              "RelativeToolTip": "module.asm",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-05T13:20:26.905Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

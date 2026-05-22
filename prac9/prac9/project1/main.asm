@@ -1,0 +1,180 @@
+P2 EQU 0A0H
+
+ORG 0000H
+    LJMP START
+
+ORG 0030H
+
+DLY:
+    NOP
+    NOP
+    RET
+
+START:
+
+; 1 ??? = 250 ???
+
+    MOV P2,#062H
+    ACALL DLY
+    MOV P2,#061H
+    ACALL DLY
+    MOV P2,#060H
+    ACALL DLY
+    MOV P2,#05EH
+    ACALL DLY
+    MOV P2,#05DH
+    ACALL DLY
+    MOV P2,#05BH
+    ACALL DLY
+    MOV P2,#059H
+    ACALL DLY
+    MOV P2,#058H
+    ACALL DLY
+    MOV P2,#056H
+    ACALL DLY
+    MOV P2,#054H
+    ACALL DLY
+    MOV P2,#053H
+    ACALL DLY
+    MOV P2,#051H
+    ACALL DLY
+    MOV P2,#04FH
+    ACALL DLY
+    MOV P2,#04EH
+    ACALL DLY
+    MOV P2,#04CH
+    ACALL DLY
+    MOV P2,#04AH
+    ACALL DLY
+    MOV P2,#049H
+    ACALL DLY
+    MOV P2,#047H
+    ACALL DLY
+    MOV P2,#045H
+    ACALL DLY
+    MOV P2,#044H
+    ACALL DLY
+    MOV P2,#042H
+    ACALL DLY
+    MOV P2,#040H
+    ACALL DLY
+    MOV P2,#03FH
+    ACALL DLY
+    MOV P2,#03DH
+    ACALL DLY
+    MOV P2,#03BH
+    ACALL DLY
+    MOV P2,#03AH
+    ACALL DLY
+    MOV P2,#038H
+    ACALL DLY
+    MOV P2,#036H
+    ACALL DLY
+    MOV P2,#035H
+    ACALL DLY
+    MOV P2,#033H
+    ACALL DLY
+    MOV P2,#032H
+    ACALL DLY
+    MOV P2,#031H
+    ACALL DLY
+    MOV P2,#030H
+    ACALL DLY
+    MOV P2,#030H
+    ACALL DLY
+    MOV P2,#030H
+    ACALL DLY
+
+
+; 2 ??? = 250 ???
+; ????????? 1 ????? ? ?????
+    MOV P2,#0C9H
+    ACALL DLY
+    MOV P2,#0C4H
+    ACALL DLY
+    MOV P2,#0BFH
+    ACALL DLY
+    MOV P2,#0BAH
+    ACALL DLY
+    MOV P2,#0B5H
+    ACALL DLY
+    MOV P2,#0B0H
+    ACALL DLY
+    MOV P2,#0ABH
+    ACALL DLY
+    MOV P2,#0A6H
+    ACALL DLY
+    MOV P2,#0A1H
+    ACALL DLY
+    MOV P2,#09CH
+    ACALL DLY
+    MOV P2,#097H
+    ACALL DLY
+    MOV P2,#092H
+    ACALL DLY
+    MOV P2,#08DH
+    ACALL DLY
+    MOV P2,#088H
+    ACALL DLY
+    MOV P2,#083H
+    ACALL DLY
+    MOV P2,#07EH
+    ACALL DLY
+    MOV P2,#079H
+    ACALL DLY
+    MOV P2,#074H
+    ACALL DLY
+    MOV P2,#06FH
+    ACALL DLY
+    MOV P2,#06AH
+    ACALL DLY
+    MOV P2,#065H
+    ACALL DLY
+    MOV P2,#060H
+    ACALL DLY
+    MOV P2,#05BH
+    ACALL DLY
+    MOV P2,#056H
+    ACALL DLY
+    MOV P2,#051H
+    ACALL DLY
+    MOV P2,#04CH
+    ACALL DLY
+    MOV P2,#047H
+    ACALL DLY
+    MOV P2,#042H
+    ACALL DLY
+    MOV P2,#03DH
+    ACALL DLY
+    MOV P2,#038H
+    ACALL DLY
+    MOV P2,#034H
+    ACALL DLY
+    MOV P2,#030H
+    ACALL DLY
+    MOV P2,#030H
+    ACALL DLY
+    MOV P2,#030H
+    ACALL DLY
+
+
+; ????????? = 250 ???
+    MOV R6,#26
+
+STEP:
+    MOV P2,#030H
+    ACALL DLY
+    DJNZ R6,STEP
+
+
+; ?????? ????? = 500 ???
+    MOV R7,#55
+
+LOW_LINE:
+    MOV P2,#00H
+    ACALL DLY
+    DJNZ R7,LOW_LINE
+
+    LJMP START
+
+END

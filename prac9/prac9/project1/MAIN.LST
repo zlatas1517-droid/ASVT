@@ -1,0 +1,197 @@
+MAIN                                                                                                          PAGE 1
+
+  00A0                 1    P2 EQU 0A0H
+                       2    
+0000                   3    ORG 0000H
+0000 020033            4        LJMP START
+                       5    
+0030                   6    ORG 0030H
+                       7    
+0030                   8    DLY:
+0030 00                9        NOP
+0031 00               10        NOP
+0032 22               11        RET
+                      12    
+0033                  13    START:
+                      14    
+                      15    ; 1 ??? = 250 ???
+                      16    
+0033 75A062           17        MOV P2,#062H
+0036 1130             18        ACALL DLY
+0038 75A061           19        MOV P2,#061H
+003B 1130             20        ACALL DLY
+003D 75A060           21        MOV P2,#060H
+0040 1130             22        ACALL DLY
+0042 75A05E           23        MOV P2,#05EH
+0045 1130             24        ACALL DLY
+0047 75A05D           25        MOV P2,#05DH
+004A 1130             26        ACALL DLY
+004C 75A05B           27        MOV P2,#05BH
+004F 1130             28        ACALL DLY
+0051 75A059           29        MOV P2,#059H
+0054 1130             30        ACALL DLY
+0056 75A058           31        MOV P2,#058H
+0059 1130             32        ACALL DLY
+005B 75A056           33        MOV P2,#056H
+005E 1130             34        ACALL DLY
+0060 75A054           35        MOV P2,#054H
+0063 1130             36        ACALL DLY
+0065 75A053           37        MOV P2,#053H
+0068 1130             38        ACALL DLY
+006A 75A051           39        MOV P2,#051H
+006D 1130             40        ACALL DLY
+006F 75A04F           41        MOV P2,#04FH
+0072 1130             42        ACALL DLY
+0074 75A04E           43        MOV P2,#04EH
+0077 1130             44        ACALL DLY
+0079 75A04C           45        MOV P2,#04CH
+007C 1130             46        ACALL DLY
+007E 75A04A           47        MOV P2,#04AH
+0081 1130             48        ACALL DLY
+0083 75A049           49        MOV P2,#049H
+0086 1130             50        ACALL DLY
+0088 75A047           51        MOV P2,#047H
+008B 1130             52        ACALL DLY
+008D 75A045           53        MOV P2,#045H
+0090 1130             54        ACALL DLY
+0092 75A044           55        MOV P2,#044H
+0095 1130             56        ACALL DLY
+0097 75A042           57        MOV P2,#042H
+009A 1130             58        ACALL DLY
+MAIN                                                                                                          PAGE 2
+
+009C 75A040           59        MOV P2,#040H
+009F 1130             60        ACALL DLY
+00A1 75A03F           61        MOV P2,#03FH
+00A4 1130             62        ACALL DLY
+00A6 75A03D           63        MOV P2,#03DH
+00A9 1130             64        ACALL DLY
+00AB 75A03B           65        MOV P2,#03BH
+00AE 1130             66        ACALL DLY
+00B0 75A03A           67        MOV P2,#03AH
+00B3 1130             68        ACALL DLY
+00B5 75A038           69        MOV P2,#038H
+00B8 1130             70        ACALL DLY
+00BA 75A036           71        MOV P2,#036H
+00BD 1130             72        ACALL DLY
+00BF 75A035           73        MOV P2,#035H
+00C2 1130             74        ACALL DLY
+00C4 75A033           75        MOV P2,#033H
+00C7 1130             76        ACALL DLY
+00C9 75A032           77        MOV P2,#032H
+00CC 1130             78        ACALL DLY
+00CE 75A031           79        MOV P2,#031H
+00D1 1130             80        ACALL DLY
+00D3 75A030           81        MOV P2,#030H
+00D6 1130             82        ACALL DLY
+00D8 75A030           83        MOV P2,#030H
+00DB 1130             84        ACALL DLY
+00DD 75A030           85        MOV P2,#030H
+00E0 1130             86        ACALL DLY
+                      87    
+                      88    
+                      89    ; 2 ??? = 250 ???
+                      90    ; ????????? 1 ????? ? ?????
+00E2 75A0C9           91        MOV P2,#0C9H
+00E5 1130             92        ACALL DLY
+00E7 75A0C4           93        MOV P2,#0C4H
+00EA 1130             94        ACALL DLY
+00EC 75A0BF           95        MOV P2,#0BFH
+00EF 1130             96        ACALL DLY
+00F1 75A0BA           97        MOV P2,#0BAH
+00F4 1130             98        ACALL DLY
+00F6 75A0B5           99        MOV P2,#0B5H
+00F9 1130            100        ACALL DLY
+00FB 75A0B0          101        MOV P2,#0B0H
+00FE 1130            102        ACALL DLY
+0100 75A0AB          103        MOV P2,#0ABH
+0103 1130            104        ACALL DLY
+0105 75A0A6          105        MOV P2,#0A6H
+0108 1130            106        ACALL DLY
+010A 75A0A1          107        MOV P2,#0A1H
+010D 1130            108        ACALL DLY
+010F 75A09C          109        MOV P2,#09CH
+0112 1130            110        ACALL DLY
+0114 75A097          111        MOV P2,#097H
+0117 1130            112        ACALL DLY
+0119 75A092          113        MOV P2,#092H
+011C 1130            114        ACALL DLY
+011E 75A08D          115        MOV P2,#08DH
+0121 1130            116        ACALL DLY
+MAIN                                                                                                          PAGE 3
+
+0123 75A088          117        MOV P2,#088H
+0126 1130            118        ACALL DLY
+0128 75A083          119        MOV P2,#083H
+012B 1130            120        ACALL DLY
+012D 75A07E          121        MOV P2,#07EH
+0130 1130            122        ACALL DLY
+0132 75A079          123        MOV P2,#079H
+0135 1130            124        ACALL DLY
+0137 75A074          125        MOV P2,#074H
+013A 1130            126        ACALL DLY
+013C 75A06F          127        MOV P2,#06FH
+013F 1130            128        ACALL DLY
+0141 75A06A          129        MOV P2,#06AH
+0144 1130            130        ACALL DLY
+0146 75A065          131        MOV P2,#065H
+0149 1130            132        ACALL DLY
+014B 75A060          133        MOV P2,#060H
+014E 1130            134        ACALL DLY
+0150 75A05B          135        MOV P2,#05BH
+0153 1130            136        ACALL DLY
+0155 75A056          137        MOV P2,#056H
+0158 1130            138        ACALL DLY
+015A 75A051          139        MOV P2,#051H
+015D 1130            140        ACALL DLY
+015F 75A04C          141        MOV P2,#04CH
+0162 1130            142        ACALL DLY
+0164 75A047          143        MOV P2,#047H
+0167 1130            144        ACALL DLY
+0169 75A042          145        MOV P2,#042H
+016C 1130            146        ACALL DLY
+016E 75A03D          147        MOV P2,#03DH
+0171 1130            148        ACALL DLY
+0173 75A038          149        MOV P2,#038H
+0176 1130            150        ACALL DLY
+0178 75A034          151        MOV P2,#034H
+017B 1130            152        ACALL DLY
+017D 75A030          153        MOV P2,#030H
+0180 1130            154        ACALL DLY
+0182 75A030          155        MOV P2,#030H
+0185 1130            156        ACALL DLY
+0187 75A030          157        MOV P2,#030H
+018A 1130            158        ACALL DLY
+                     159    
+                     160    
+                     161    ; ????????? = 250 ???
+018C 7E1A            162        MOV R6,#26
+                     163    
+018E                 164    STEP:
+018E 75A030          165        MOV P2,#030H
+0191 1130            166        ACALL DLY
+0193 DEF9            167        DJNZ R6,STEP
+                     168    
+                     169    
+                     170    ; ?????? ????? = 500 ???
+0195 7F37            171        MOV R7,#55
+                     172    
+0197                 173    LOW_LINE:
+0197 75A000          174        MOV P2,#00H
+MAIN                                                                                                          PAGE 4
+
+019A 1130            175        ACALL DLY
+019C DFF9            176        DJNZ R7,LOW_LINE
+                     177    
+019E 020033          178        LJMP START
+                     179    
+                     180    END
+
+VERSION 1.2k ASSEMBLY COMPLETE, 0 ERRORS FOUND
+MAIN                                                                                                          PAGE 5
+
+DLY. . . . . . . . . . . . . . .  C ADDR  0030H  
+LOW_LINE . . . . . . . . . . . .  C ADDR  0197H  
+P2 . . . . . . . . . . . . . . .    NUMB  00A0H  
+START. . . . . . . . . . . . . .  C ADDR  0033H  
+STEP . . . . . . . . . . . . . .  C ADDR  018EH  
